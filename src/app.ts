@@ -7,10 +7,14 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   height: window.innerHeight,
   parent: 'game',
   physics: {
-    arcade: {
-      debug: false, // true for collisions debug
+    default: 'matter',
+    matter: {
+      debug: true, // true for collisions debug
+      gravity: {
+        y: 0,
+        x: 0
+      }
     },
-    default: "arcade",
   },
   scene: [MainScene],
   type: Phaser.AUTO,
