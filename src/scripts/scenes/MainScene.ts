@@ -44,10 +44,10 @@ export default class MainScene extends Phaser.Scene {
   spawnConvoy() {
     // typing is wrong here
     this.tilemap.findObject('Start', (startPoint: any) => {
-      this.convoy =
-        this.convoy = this.matter.add.sprite(startPoint.x, startPoint.y, "car", null, {
-          frictionAir: 0,
-        });
+      this.convoy = new Convoy(this.matter.world, startPoint.x, startPoint.y, "car", '0', 10, {
+        frictionAir: 0,
+      });
+      this.convoy.setVelocityX(3);
 
     })
   }
@@ -70,7 +70,7 @@ export default class MainScene extends Phaser.Scene {
       }
       grid.push(col);
     }
-   // console.log(finder.setGrid(grid));
+    // console.log(finder.setGrid(grid));
   }
 
 
