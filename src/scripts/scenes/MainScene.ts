@@ -46,7 +46,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   goPathfinding(map: Phaser.Tilemaps.StaticTilemapLayer) {
-    const finder = new Easystar;
+    //const finder = new Easystar;
 
     // We create the 2D array representing all the tiles of our map
     let grid = [];
@@ -63,7 +63,7 @@ export default class MainScene extends Phaser.Scene {
       }
       grid.push(col);
     }
-    console.log(finder.setGrid(grid));
+   // console.log(finder.setGrid(grid));
   }
 }
 
