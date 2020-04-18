@@ -34,11 +34,10 @@ export default class MainScene extends Phaser.Scene {
   spawnConvoy() {
     // typing is wrong here
     this.tilemap.findObject('Start', (startPoint: any) => {
-      this.convoy = this.matter.add.image(startPoint.x, startPoint.y, "car", null, {
+      this.convoy = this.matter.add.sprite(startPoint.x, startPoint.y, "car", null, {
         frictionAir: 0,
-
       });
-      this.convoy.setVelocityX(10)
+      this.convoy.setVelocityX(2)
 
     })
   }
