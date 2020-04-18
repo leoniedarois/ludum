@@ -27,8 +27,8 @@ export class Enemy extends PhaserObject {
     }
 
     protected setPhysics() {
-        let detection =  this.scene.matter.bodies.circle(this.x, this.y, this.range);
-        const body = this.scene.matter.bodies.rectangle(this.x, this.y, 60, 110, {
+        let detection =  this.scene.matter.bodies.circle(this.x, this.y, this.range*10);
+        const body = this.scene.matter.bodies.rectangle(this.x, this.y, 10, 10, {
             chamfer: { radius: 17 }
         });
 
@@ -39,7 +39,6 @@ export class Enemy extends PhaserObject {
             parts: [ body, this.sensors.detection],
             inertia: Infinity
         });
-        debugger;
         this.setExistingBody(compoundBody);
     }
 }
