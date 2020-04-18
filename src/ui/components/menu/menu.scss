@@ -1,0 +1,18 @@
+.menu {
+  background: black;
+  padding: 20px;
+  display: none;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 50px;
+  background: grey;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.show {
+  display: block !important;
+}
