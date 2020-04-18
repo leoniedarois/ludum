@@ -1,7 +1,8 @@
-const path = require('path')
-var LiveReloadPlugin = require('webpack-livereload-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-var webpack = require('webpack')
+const path = require('path');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var definePlugin = new webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
@@ -62,5 +63,6 @@ module.exports = {
                 to: 'assets'
             },
         ]),
+        new CleanWebpackPlugin(),
     ],
 }
