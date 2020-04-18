@@ -1,6 +1,11 @@
 { "compressionlevel":0,
  "editorsettings":
     {
+     "chunksize":
+        {
+         "height":64,
+         "width":64
+        },
      "export":
         {
          "format":"json",
@@ -93,7 +98,7 @@
         {
          "columns":19,
          "firstgid":1,
-         "image":"map.png",
+         "image":"..\/graphics\/Spritesheets\/spritesheet-map.png",
          "imageheight":64,
          "imagewidth":1216,
          "margin":0,
