@@ -1,4 +1,5 @@
 import {Tank} from "./tank";
+import {LightTroop} from "./lightTroop";
 
 export const ENEMYS_TYPE_INFO = {
     Tank: {
@@ -18,7 +19,7 @@ export const ENEMYS_TYPE_INFO = {
         cooldown: 25,
         name: 'light_Troops',
         create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
-            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, options)
+            return new LightTroop(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, options)
         }
     },
     heavy_Troops: {
