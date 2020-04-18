@@ -4,10 +4,12 @@ import "phaser";
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   backgroundColor: "#000000",
-  height: window.innerHeight,
+  height: 500,
+  width: 500,
   parent: 'game',
   physics: {
     default: 'matter',
+
     matter: {
       debug: true, // true for collisions debug
       gravity: {
@@ -18,7 +20,12 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   },
   scene: [MainScene],
   type: Phaser.AUTO,
-  width: document.body.offsetWidth,
+  scale: {
+    height: 1280,
+    width: 1920,
+    mode: Phaser.Scale.FIT,
+  }
+
 };
 // tslint:disable-next-line: no-unused-expression
-new Phaser.Game(gameConfig);
+const game = new Phaser.Game(gameConfig);

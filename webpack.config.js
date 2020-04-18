@@ -1,7 +1,8 @@
-const path = require('path');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-var webpack = require('webpack');
+const path = require('path')
+var LiveReloadPlugin = require('webpack-livereload-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+var webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 var definePlugin = new webpack.DefinePlugin({
@@ -13,7 +14,7 @@ var definePlugin = new webpack.DefinePlugin({
 module.exports = {
     entry: {
         game: './src/app.ts',
-        ui: './src/ui/index.ts',
+        ui: './src/ui/index.tsx',
     },
     mode: 'development',
     devtool: "inline-source-map",
@@ -66,6 +67,9 @@ module.exports = {
                 to: 'assets'
             },
         ]),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+        }),
         new CleanWebpackPlugin(),
     ],
 }
