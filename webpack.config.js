@@ -62,12 +62,13 @@ module.exports = {
             {
                 context: "src/assets",
                 from: '**/*',
-                to: 'assets'
+                to: 'assets',
+
             },
         ]),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
         }),
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
     ],
 }
