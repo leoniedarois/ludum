@@ -1,13 +1,23 @@
 {
-    "files": ["src/app.ts"],
-    "typeRoots": ["./node_modules/phaser/types"],
-    "types": ["Phaser"],
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "target": "es5",
-        "module": "commonjs",
-        "removeComments": true,
-        "sourceMap": true,
-        "jsx": "react"
-    }
+  "files": [
+    "src/app.ts"
+  ],
+  "typeRoots": [
+    "./node_modules/phaser/types"
+  ],
+  "types": [
+    "Phaser"
+  ],
+  "compilerOptions": {
+      "jsx": "react",
+    "noImplicitAny": true,
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "**/*.d.ts"
+  ]
 }
