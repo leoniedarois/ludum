@@ -29,6 +29,12 @@ export default class MainScene extends Phaser.Scene {
     // this.goPathfinding(pathLayer);
     let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer), this);
     currentLevel.spawnEnemy();
+
+    this.matter.world.on('collisionstart', function (event: any, bodyA: MatterJS.Bodies, bodyB: MatterJS.Bodies) {
+      console.log(bodyA);
+      console.log(bodyB);
+
+    });
   }
 
   /**
@@ -65,5 +71,7 @@ export default class MainScene extends Phaser.Scene {
     }
    // console.log(finder.setGrid(grid));
   }
+
+
 }
 
