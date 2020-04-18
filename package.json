@@ -30,6 +30,7 @@
     "dependencies": {
         "copy-webpack-plugin": "^5.1.1",
         "css-loader": "^2.1.0",
+        "file-loader": "^6.0.0",
         "husky": "^4.2.3",
         "node-sass": "^4.13.1",
         "phaser": "^3.22.0",
