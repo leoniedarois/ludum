@@ -2,6 +2,10 @@ import "phaser";
 import { Level } from "../level/level";
 import { PhaserObject } from "../models/phaserObjects/phaserObject";
 import { Convoy } from "../models/convoy/convoy";
+import startLevelTrigger from "../models/levelTrigger/startLevelTrigger";
+import endLevelTrigger from "../models/levelTrigger/endLevelTrigger";
+import EndLevelTrigger from "../models/levelTrigger/endLevelTrigger";
+import StartLevelTrigger from "../models/levelTrigger/startLevelTrigger";
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
   finder: any;
@@ -60,13 +64,14 @@ export default class MainScene extends Phaser.Scene {
    * Spawn some level triggers (like start and end point)
    */
   spawnLevelTriggers() {
-    this.tilemap.findObject('Finish', (endPoint: any) => {
-      const endPointObj = new PhaserObject(this.matter.world, endPoint.x, endPoint.y, "car", '0', {});
+
+
+    this.tilemap.findObject('Start', (startpPoint: any) => {
+      const startTrigger = new StartLevelTrigger(this.matter.world, startpPoint.x, startpPoint.y, "car", '0', {})
     });
 
-    this.tilemap.findObject('Start', (startPoint: any) => {
-      const spawnPoint = new PhaserObject(this.matter.world, startPoint.x, startPoint.y, "car", '0', {
-      });
+    this.tilemap.findObject('Finish', (endPoint: any) => {
+      const endTrigger = new EndLevelTrigger(this.matter.world, endPoint.x, endPoint.y, "car", '0', {})
     });
   }
 
