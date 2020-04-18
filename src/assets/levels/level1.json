@@ -82,9 +82,54 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "id":6,
+         "layers":[
+                {
+                 "draworder":"topdown",
+                 "id":7,
+                 "name":"spawn",
+                 "objects":[
+                        {
+                         "height":0,
+                         "id":4,
+                         "name":"",
+                         "point":true,
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":412,
+                         "y":608
+                        }, 
+                        {
+                         "height":0,
+                         "id":6,
+                         "name":"",
+                         "point":true,
+                         "rotation":0,
+                         "type":"",
+                         "visible":true,
+                         "width":0,
+                         "x":671.5,
+                         "y":736.5
+                        }],
+                 "opacity":1,
+                 "type":"objectgroup",
+                 "visible":true,
+                 "x":0,
+                 "y":0
+                }],
+         "name":"EnemysSpawn",
+         "opacity":1,
+         "type":"group",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":4,
+ "nextlayerid":10,
+ "nextobjectid":7,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.4",
@@ -93,7 +138,7 @@
         {
          "columns":19,
          "firstgid":1,
-         "image":"map.png",
+         "image":"..\/graphics\/Spritesheets\/spritesheet-map.png",
          "imageheight":64,
          "imagewidth":1216,
          "margin":0,

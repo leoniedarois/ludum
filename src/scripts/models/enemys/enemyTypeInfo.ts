@@ -1,7 +1,31 @@
+import {Tank} from "./tank";
+
 export const ENEMYS_TYPE_INFO = {
-    xxxx: {
+    Tank: {
         hp: 10,
         damage: 2,
-        cooldown: 5
-    }
+        cooldown: 5,
+        name: 'Tank',
+        create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, options)
+        }
+    },
+    light_Troops: {
+        hp: 15,
+        damage: 4,
+        cooldown: 25,
+        name: 'light_Troops',
+        create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, options)
+        }
+    },
+    heavy_Troops: {
+        hp: 30,
+        damage: 9,
+        cooldown: 2,
+        name: 'heavy_Troops',
+        create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, options)
+        }
+    },
 };

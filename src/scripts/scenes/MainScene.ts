@@ -1,4 +1,5 @@
 import "phaser";
+import {Level} from "../level/level";
 
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
@@ -16,6 +17,8 @@ export default class MainScene extends Phaser.Scene {
     const tileSet = map.addTilesetImage('road', 'road');
     const worldLayer = map.createStaticLayer('terrain', tileSet, 0, 0);
     const pathLayer = map.createStaticLayer('road', tileSet, 0, 0);
+    let currentLevel = new Level(map, this.matter.world.convertTilemapLayer(worldLayer));
+    currentLevel.spawnEnemy();
   }
 
 }

@@ -26,13 +26,16 @@
         "url": "https://github.com/nj-neer/phaser3-typescript-starter/issues"
     },
     "homepage": "https://github.com/nj-neer/phaser3-typescript-starter/#readme",
-    "devDependencies": {},
+    "devDependencies": {
+        "@types/lodash": "^4.14.150"
+    },
     "dependencies": {
         "clean-webpack-plugin": "^3.0.0",
         "copy-webpack-plugin": "^5.1.1",
         "css-loader": "^2.1.0",
         "file-loader": "^6.0.0",
         "husky": "^4.2.3",
+        "lodash": "^4.17.15",
         "node-sass": "^4.13.1",
         "phaser": "^3.22.0",
         "prettier": "^2.0.2",
