@@ -7,7 +7,7 @@ export const elementTypeWeakTabs = {
     ELECTRIC: [ElementTypeEnum.ICE],
 
     getWeaknessByName: function (name: string): Array<ElementTypeEnum>  {
-        return elementTypeWeakTabs[name];
+        return this[name];
     }
 
 };
