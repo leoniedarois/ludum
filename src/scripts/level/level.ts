@@ -6,15 +6,18 @@ import {Enemy} from "../models/enemys/enemy";
 export class Level {
     private map: Phaser.Tilemaps.Tilemap;
     private worldLayer: Phaser.Physics.Matter.World;
+    private scene: Phaser.Scene;
 
     /**
      * Construct our level
      * @param map
      * @param worldLayer
+     * @param scene
      */
-    constructor(map: Phaser.Tilemaps.Tilemap, worldLayer: Phaser.Physics.Matter.World) {
+    constructor(map: Phaser.Tilemaps.Tilemap, worldLayer: Phaser.Physics.Matter.World, scene: Phaser.Scene) {
         this.map = map;
         this.worldLayer = worldLayer;
+        this.scene = scene;
     }
 
     getTilebyXY(x: number, y: number): Tile {
