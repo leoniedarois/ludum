@@ -14,11 +14,6 @@
         "type": "git",
         "url": "git+https://github.com/nj-neer/phaser3-typescript-starter.git"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint"
-        }
-    },
     "keywords": [
         "phaser",
         "gulp",
