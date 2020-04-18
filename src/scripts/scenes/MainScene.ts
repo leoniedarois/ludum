@@ -1,10 +1,11 @@
 import "phaser";
-import {Level} from "../level/level";
-
+import { Level } from "../level/level";
+import { PhaserObject } from "../models/phaserObjects/phaserObject";
+import { Convoy } from "../models/convoy/convoy";
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
   finder: any;
-  convoy: Phaser.Physics.Matter.Image;
+  convoy: Phaser.Physics.Matter.Sprite
   constructor() {
     super({
       key: "MainScene",
@@ -37,33 +38,13 @@ export default class MainScene extends Phaser.Scene {
   spawnConvoy() {
     // typing is wrong here
     this.tilemap.findObject('Start', (startPoint: any) => {
-      this.convoy = this.matter.add.sprite(startPoint.x, startPoint.y, "car", null, {
-        frictionAir: 0,
-      });
-      this.convoy.setVelocityX(2)
+      this.convoy =
+        this.convoy = this.matter.add.sprite(startPoint.x, startPoint.y, "car", null, {
+          frictionAir: 0,
+        });
 
     })
   }
 
-  goPathfinding(map: Phaser.Tilemaps.StaticTilemapLayer) {
-    const finder = new Easystar;
-
-    // We create the 2D array representing all the tiles of our map
-    let grid = [];
-    for (var y = 0; y < map.height; y++) {
-      let col: any = [];
-      for (var x = 0; x < map.width; x++) {
-        // In each cell we store the ID of the tile, which corresponds
-        // to its index in the tileset of the map ("ID" field in Tiled)
-
-        const tile = map.getTileAt(0, 0);
-        if (tile) {
-          col.push(tile.index);
-        }
-      }
-      grid.push(col);
-    }
-    console.log(finder.setGrid(grid));
-  }
 }
 
