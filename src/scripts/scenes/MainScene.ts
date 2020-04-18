@@ -1,13 +1,16 @@
 import "phaser";
-import {Level} from "../level/level";
-import {Projectile} from "../models/projectiles/projectile";
-import {PhaserObject} from "../models/phaserObjects/phaserObject";
+import { Level } from "../level/level";
+import { PhaserObject } from "../models/phaserObjects/phaserObject";
+import { Convoy } from "../models/convoy/convoy";
+import startLevelTrigger from "../models/levelTrigger/startLevelTrigger";
+import endLevelTrigger from "../models/levelTrigger/endLevelTrigger";
+import EndLevelTrigger from "../models/levelTrigger/endLevelTrigger";
+import StartLevelTrigger from "../models/levelTrigger/startLevelTrigger";
 import {PROJECTILES_TYPE_INFO} from "../models/projectiles/projectilesTypeInfo";
-
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
   finder: any;
-  convoy: Phaser.Physics.Matter.Image;
+  convoy: Phaser.Physics.Matter.Sprite
   constructor() {
     super({
       key: "MainScene",
@@ -28,6 +31,7 @@ export default class MainScene extends Phaser.Scene {
     const pathLayer = this.tilemap.createStaticLayer('road', tileSet, 0, 0);
 
     this.spawnConvoy();
+    this.spawnLevelTriggers();
 
     // this.goPathfinding(pathLayer);
     let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer), this);
@@ -46,12 +50,30 @@ export default class MainScene extends Phaser.Scene {
   spawnConvoy() {
     // typing is wrong here
     this.tilemap.findObject('Start', (startPoint: any) => {
-      this.convoy = this.matter.add.sprite(startPoint.x, startPoint.y, "car", null, {
+      this.convoy = new Convoy(this.matter.world, startPoint.x, startPoint.y, "car", '0', 10, {
         frictionAir: 0,
       });
-      this.convoy.setVelocityX(2)
+      this.convoy.setVelocityX(3);
 
-    })
+
+
+    });
+
+  }
+
+  /**
+   * Spawn some level triggers (like start and end point)
+   */
+  spawnLevelTriggers() {
+
+
+    this.tilemap.findObject('Start', (startpPoint: any) => {
+      const startTrigger = new StartLevelTrigger(this.matter.world, startpPoint.x, startpPoint.y, "car", '0', {})
+    });
+
+    this.tilemap.findObject('Finish', (endPoint: any) => {
+      const endTrigger = new EndLevelTrigger(this.matter.world, endPoint.x, endPoint.y, "car", '0', {})
+    });
   }
 
   goPathfinding(map: Phaser.Tilemaps.StaticTilemapLayer) {
@@ -72,7 +94,7 @@ export default class MainScene extends Phaser.Scene {
       }
       grid.push(col);
     }
-   // console.log(finder.setGrid(grid));
+    // console.log(finder.setGrid(grid));
   }
 
 
