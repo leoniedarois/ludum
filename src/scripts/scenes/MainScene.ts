@@ -33,7 +33,6 @@ export default class MainScene extends Phaser.Scene {
 
     this.spawnConvoy();
     this.spawnLevelTriggers();
-
     // this.goPathfinding(pathLayer);
     let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer), this);
     currentLevel.spawnEnemy();

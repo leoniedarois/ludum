@@ -1,5 +1,7 @@
 import {PhaserObject} from "../phaserObjects/phaserObject";
 import 'phaser'
+import {PROJECTILES_TYPE_INFO} from "../projectiles/projectilesTypeInfo";
+import {Projectile} from "../projectiles/projectile";
 export class Enemy extends PhaserObject {
     damage: number;
     hp: number;
@@ -76,7 +78,7 @@ export class Enemy extends PhaserObject {
      * Handle when the target enter the shootingRange
      */
     private enterShootingRange({ bodyA, bodyB }): void {
-        if (bodyB.gameObject instanceof Enemy){
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
             return;
         }
         if (bodyA.isSensor && !bodyA.gameObject.hasTarget()) {
@@ -90,7 +92,7 @@ export class Enemy extends PhaserObject {
      * Handle when the target leave the shootingRange
      */
     private leaveShootingRange({ bodyA, bodyB }): void {
-        if (bodyB.gameObject instanceof Enemy){
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
             return;
         }
         if (bodyA.isSensor && bodyA.gameObject.hasTarget()) {
@@ -104,7 +106,7 @@ export class Enemy extends PhaserObject {
      * Handle when the target enter the shootingRange
      */
     private fireWhileTargetAtRange({ bodyA, bodyB }): void {
-        if (bodyB.gameObject instanceof Enemy){
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
             return;
         }
         if (bodyA.isSensor && bodyA.gameObject.hasTarget()) {
