@@ -1,5 +1,6 @@
 import "phaser";
-import { js as Easystar } from "easystarjs";
+import {Level} from "../level/level";
+
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
   finder: any;
@@ -26,6 +27,8 @@ export default class MainScene extends Phaser.Scene {
 
 
     // this.goPathfinding(pathLayer);
+    let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer));
+    currentLevel.spawnEnemy();
   }
 
   /**
