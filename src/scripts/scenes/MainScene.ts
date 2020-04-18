@@ -25,6 +25,7 @@ export default class MainScene extends Phaser.Scene {
     const pathLayer = this.tilemap.createStaticLayer('road', tileSet, 0, 0);
 
     this.spawnConvoy();
+    this.spawnLevelTriggers();
 
 
     // this.goPathfinding(pathLayer);
@@ -49,7 +50,24 @@ export default class MainScene extends Phaser.Scene {
       });
       this.convoy.setVelocityX(3);
 
-    })
+
+
+    });
+
+  }
+
+  /**
+   * Spawn some level triggers (like start and end point)
+   */
+  spawnLevelTriggers() {
+    this.tilemap.findObject('Finish', (endPoint: any) => {
+      const endPointObj = new PhaserObject(this.matter.world, endPoint.x, endPoint.y, "car", '0', {});
+    });
+
+    this.tilemap.findObject('Start', (startPoint: any) => {
+      const spawnPoint = new PhaserObject(this.matter.world, startPoint.x, startPoint.y, "car", '0', {
+      });
+    });
   }
 
   goPathfinding(map: Phaser.Tilemaps.StaticTilemapLayer) {
