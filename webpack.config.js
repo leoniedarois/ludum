@@ -57,10 +57,10 @@ module.exports = {
         new LiveReloadPlugin(),
         new CopyPlugin([
             { from: 'src/index.html' },
-            // {
-            //     from: 'src/assets/levels/*.json',
-            //     to: 'assets/levels/',
-            // },
+            {
+                from: 'src/assets',
+                to: 'assets'
+            },
         ]),
     ],
 }
