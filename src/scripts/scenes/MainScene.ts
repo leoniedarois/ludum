@@ -1,16 +1,21 @@
 import "phaser";
 
 export default class MainScene extends Phaser.Scene {
+  tilemap: Phaser.Tilemaps.Tilemap;
   constructor() {
     super({
       key: "MainScene",
     });
   }
   preload() {
-    this.load.image("gameImage", "assets/graphics/ui/game.png");
+    this.load.tilemapTiledJSON('map', 'assets/levels/level1.json');
+    this.load.multiatlas('road', 'assets/graphics/Spritesheets/spritesheet-map.json', 'assets/graphics/Spritesheets');
   }
   create() {
-    this.add.image(400, 300, "gameImage");
+    const map = this.add.tilemap('map');
+    const tileSet = map.addTilesetImage('road', 'road');
+    const worldLayer = map.createStaticLayer('terrain', tileSet, 0, 0);
+    const pathLayer = map.createStaticLayer('road', tileSet, 0, 0);
   }
 
 }
