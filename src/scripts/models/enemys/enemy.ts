@@ -7,6 +7,7 @@ export class Enemy extends PhaserObject {
     range: number;
     sensors: any;
     target: PhaserObject = null;
+    projectileInfo: any;
 
 
 
@@ -16,6 +17,7 @@ export class Enemy extends PhaserObject {
         this.hp = hp;
         this.range = range;
         this.enemenyName = name;
+        this.collisionCat = 1;
         this.setPhysics();
     }
 
@@ -44,9 +46,14 @@ export class Enemy extends PhaserObject {
             inertia: Infinity
         });
         this.setExistingBody(compoundBody);
+        this.setCollisionCategory(this.collisionCat);
         this.enterShootingRange();
     }
 
+    /**
+     * Set the target of the enemy
+     * @param target
+     */
     protected setTarget(target: PhaserObject): void {
         this.target = target;
     }
@@ -67,6 +74,7 @@ export class Enemy extends PhaserObject {
                 //Begin firing to the target
                 console.log(bodyB);
                 bodyB.gameObject.setTarget(bodyA.gameObject);
+                bodyB.gameObject.fire();
             }
         });
         this.scene.matter.world.on('collisionend', function (event: any, bodyA: any, bodyB: any) {
@@ -76,5 +84,10 @@ export class Enemy extends PhaserObject {
                 bodyB.gameObject.setTarget(null);
             }
         });
+    }
+
+    private fire(): void {
+        //world, x, y, frame, options
+        this.projectileInfo.create(this.world, this.x, this.y, this.target, this);
     }
 }

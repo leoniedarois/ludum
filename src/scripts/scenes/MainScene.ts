@@ -1,5 +1,8 @@
 import "phaser";
 import {Level} from "../level/level";
+import {Projectile} from "../models/projectiles/projectile";
+import {PhaserObject} from "../models/phaserObjects/phaserObject";
+import {PROJECTILES_TYPE_INFO} from "../models/projectiles/projectilesTypeInfo";
 
 export default class MainScene extends Phaser.Scene {
   tilemap: Phaser.Tilemaps.Tilemap;
@@ -14,6 +17,7 @@ export default class MainScene extends Phaser.Scene {
   preload() {
     this.load.tilemapTiledJSON('map', 'assets/levels/level1.json');
     this.load.multiatlas('road', 'assets/graphics/Spritesheets/spritesheet-map.json', 'assets/graphics/Spritesheets');
+    this.load.multiatlas('objects', 'assets/graphics/Spritesheets/spritesheet-objects.json', 'assets/graphics/Spritesheets');
     this.load.image('car', 'assets/graphics/gameplay/car.png')
   }
   create() {
@@ -24,7 +28,6 @@ export default class MainScene extends Phaser.Scene {
     const pathLayer = this.tilemap.createStaticLayer('road', tileSet, 0, 0);
 
     this.spawnConvoy();
-
 
     // this.goPathfinding(pathLayer);
     let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer), this);

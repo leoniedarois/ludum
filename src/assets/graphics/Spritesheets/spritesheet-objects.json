@@ -1,0 +1,595 @@
+{
+	"textures": [
+		{
+			"image": "spritesheet-objects.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 512,
+				"h": 593
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "valid.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 48,
+						"w": 512,
+						"h": 417
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 512,
+						"h": 417
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "convoyui.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 128
+					},
+					"frame": {
+						"x": 0,
+						"y": 417,
+						"w": 192,
+						"h": 128
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoyleft.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 64,
+						"h": 48
+					},
+					"frame": {
+						"x": 0,
+						"y": 545,
+						"w": 64,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoyright.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 64,
+						"h": 48
+					},
+					"frame": {
+						"x": 64,
+						"y": 545,
+						"w": 64,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/frostgrenade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 1,
+						"w": 40,
+						"h": 48
+					},
+					"frame": {
+						"x": 128,
+						"y": 545,
+						"w": 40,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/grenade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 1,
+						"w": 40,
+						"h": 48
+					},
+					"frame": {
+						"x": 168,
+						"y": 545,
+						"w": 40,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/fireparticule1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 192,
+						"y": 417,
+						"w": 64,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/fireparticule2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 192,
+						"y": 481,
+						"w": 64,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/wagonhorizontal.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 64,
+						"h": 42
+					},
+					"frame": {
+						"x": 208,
+						"y": 545,
+						"w": 64,
+						"h": 42
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoy.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 0,
+						"w": 48,
+						"h": 64
+					},
+					"frame": {
+						"x": 256,
+						"y": 417,
+						"w": 48,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoydown.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 0,
+						"w": 48,
+						"h": 64
+					},
+					"frame": {
+						"x": 256,
+						"y": 481,
+						"w": 48,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/fireparticule3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 14,
+						"w": 45,
+						"h": 39
+					},
+					"frame": {
+						"x": 272,
+						"y": 545,
+						"w": 45,
+						"h": 39
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/wagonvertical.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 42,
+						"h": 64
+					},
+					"frame": {
+						"x": 304,
+						"y": 417,
+						"w": 42,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "alliedturret.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 30,
+						"h": 64
+					},
+					"frame": {
+						"x": 304,
+						"y": 481,
+						"w": 30,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "ennemyturret.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 30,
+						"h": 64
+					},
+					"frame": {
+						"x": 334,
+						"y": 481,
+						"w": 30,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/flamethrower.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 30,
+						"h": 64
+					},
+					"frame": {
+						"x": 346,
+						"y": 417,
+						"w": 30,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/grenadelauncher.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 0,
+						"w": 28,
+						"h": 64
+					},
+					"frame": {
+						"x": 364,
+						"y": 481,
+						"w": 28,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/frostrocketlauncher.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 0,
+						"w": 24,
+						"h": 64
+					},
+					"frame": {
+						"x": 376,
+						"y": 417,
+						"w": 24,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/rocketlauncher.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 0,
+						"w": 24,
+						"h": 64
+					},
+					"frame": {
+						"x": 392,
+						"y": 481,
+						"w": 24,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "rocket.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 34,
+						"h": 62
+					},
+					"frame": {
+						"x": 400,
+						"y": 417,
+						"w": 34,
+						"h": 62
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "heart.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 9,
+						"w": 64,
+						"h": 55
+					},
+					"frame": {
+						"x": 434,
+						"y": 417,
+						"w": 64,
+						"h": 55
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "home.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 4,
+						"w": 54,
+						"h": 50
+					},
+					"frame": {
+						"x": 434,
+						"y": 472,
+						"w": 54,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "coin.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 51,
+						"h": 60
+					},
+					"frame": {
+						"x": 416,
+						"y": 522,
+						"w": 51,
+						"h": 60
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:165d0f55e75ae62b5ff6651c3ce5688d:16d1ab06d9f70d97dddea742c5338c73:e7aaed0050fcdc69d8d78b80463e8bca$"
+	}
+}
