@@ -7,6 +7,10 @@ export class Tower extends PhaserObject{
     name: string;
     element: Element;
     damage: number;
+    /**
+     * Pixel range of the tower
+     */
+    range: number;
 
     /**
      *
@@ -19,14 +23,16 @@ export class Tower extends PhaserObject{
      * @param hp
      * @param name
      * @param element
+     * @param range In pixel
      * @param damage
      */
-    constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, hp: number, name: string, element: Element, damage: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+    constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, hp: number, name: string, element: Element, damage: number, range: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
         super(world, x, y, texture, frame, options);
         this.hp = hp;
         this.name = name;
         this.element = element;
         this.damage = damage;
+        this.range = range;
     }
 
     /**
