@@ -7,6 +7,7 @@ export class Convoy extends PhaserObject {
     constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, hp: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
         super(world, x, y, texture, frame, options);
         this.hp = hp;
+        this.collisionCat = 2;
     }
 
     /**

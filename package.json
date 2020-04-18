@@ -52,6 +52,7 @@
         "lodash": "^4.17.15",
         "node-sass": "^4.13.1",
         "phaser": "^3.22.0",
+        "phaser-matter-collision-plugin": "^0.10.2",
         "prettier": "^2.0.2",
         "pretty-quick": "^2.0.1",
         "react": "^16.13.1",

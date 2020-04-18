@@ -6,9 +6,11 @@ export class Projectile extends PhaserObject {
     private projName: string;
     private target: any;
     private initiator: PhaserObject;
+    public scene: any;
 
 
     constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, damage: number, speed: number, name: string, target: any, initiator: PhaserObject,  options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+
         super(world, x, y, texture, frame, options);
         this.damage = damage;
         this.speed = speed;
@@ -18,7 +20,10 @@ export class Projectile extends PhaserObject {
         this.collisionCat = target.getCollisionCat();
         this.setPhysics();
         this.moveProjectileToTarget();
-        this.onCollision();
+        this.scene.matterCollision.addOnCollideStart({objectA: this,
+            callback: this.onCollision,
+            context: this
+        });
     }
 
     private moveProjectileToTarget(): void {
@@ -41,10 +46,13 @@ export class Projectile extends PhaserObject {
         this.setExistingBody(compoundBody);
     }
 
-    public onCollision(): void {
-        this.scene.matter.world.on('collisionstart', () => {
-            console.log('Target Hit !!');
-            this.destroy();
+    public onCollision(eventData: any): void {
+        console.log('Target Hit !!');
+        console.log(eventData);
+        this.scene.matterCollision.removeOnCollideStart({objectA: this,
+            callback: this.onCollision,
+            context: this
         });
+        this.destroy();
     }
 }

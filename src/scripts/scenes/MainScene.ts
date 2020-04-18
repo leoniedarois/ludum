@@ -8,6 +8,7 @@ import EndLevelTrigger from "../models/levelTrigger/endLevelTrigger";
 import StartLevelTrigger from "../models/levelTrigger/startLevelTrigger";
 import {PROJECTILES_TYPE_INFO} from "../models/projectiles/projectilesTypeInfo";
 export default class MainScene extends Phaser.Scene {
+  matterCollision: any;
   tilemap: Phaser.Tilemaps.Tilemap;
   finder: any;
   convoy: Phaser.Physics.Matter.Sprite
@@ -36,12 +37,6 @@ export default class MainScene extends Phaser.Scene {
     // this.goPathfinding(pathLayer);
     let currentLevel = new Level(this.tilemap, this.matter.world.convertTilemapLayer(worldLayer), this);
     currentLevel.spawnEnemy();
-
-    this.matter.world.on('collisionstart', function (event: any, bodyA: MatterJS.Bodies, bodyB: MatterJS.Bodies) {
-      console.log(bodyA);
-      console.log(bodyB);
-
-    });
   }
 
   /**

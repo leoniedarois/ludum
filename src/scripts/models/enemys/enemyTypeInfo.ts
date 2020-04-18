@@ -9,7 +9,7 @@ export const ENEMYS_TYPE_INFO = {
         cooldown: 5,
         name: 'Tank',
         create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
-            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, options)
+            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, this.cooldown, options)
         }
     },
     light_Troops: {
@@ -19,7 +19,7 @@ export const ENEMYS_TYPE_INFO = {
         cooldown: 25,
         name: 'light_Troops',
         create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
-            return new LightTroop(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, options)
+            return new LightTroop(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, this.cooldown, options)
         }
     },
     heavy_Troops: {
@@ -29,7 +29,7 @@ export const ENEMYS_TYPE_INFO = {
         cooldown: 2,
         name: 'heavy_Troops',
         create: function (world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
-            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, options)
+            return new Tank(world, x, y, texture, frame, this.damage, this.hp, this.name, this.range, this.cooldown, options)
         }
     },
 };
