@@ -14,7 +14,8 @@ export default class MainScene extends Phaser.Scene {
   create() {
     const map = this.add.tilemap('map');
     const tileSet = map.addTilesetImage('road', 'road');
-    const worldLayer = map.createStaticLayer('road', tileSet, 0, 0);
+    const worldLayer = map.createStaticLayer('terrain', tileSet, 0, 0);
+    const pathLayer = map.createStaticLayer('road', tileSet, 0, 0);
     const worldLayerCollide = map.createStaticLayer('collide', tileSet, 0, 0);
   }
 
