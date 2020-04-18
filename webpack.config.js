@@ -60,7 +60,8 @@ module.exports = {
         new CopyPlugin([
             { from: 'src/index.html' },
             {
-                from: 'src/assets',
+                context: "src/assets",
+                from: '**/*',
                 to: 'assets'
             },
         ]),
