@@ -91,6 +91,11 @@ export default class MainScene extends Phaser.Scene {
     // console.log(finder.setGrid(grid));
   }
 
+  // Fct we call each frame
+  public update() {
+
+  }
+
 
 }
 

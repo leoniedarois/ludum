@@ -2,7 +2,7 @@ import {Tank} from "./tank";
 import {LightTroop} from "./lightTroop";
 
 export const ENEMYS_TEXTURE_KEY = {
-    textureKey: ''
+    textureKey: 'objects'
 };
 
 export const ENEMYS_TYPE_INFO = {
@@ -12,7 +12,7 @@ export const ENEMYS_TYPE_INFO = {
         range: 9,
         cooldown: 5,
         name: 'Tank',
-        frame: '',
+        frame: 'ennemyturret.png',
         create: function (world: Phaser.Physics.Matter.World, x: number, y: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
             return new Tank(world, x, y, ENEMYS_TEXTURE_KEY.textureKey, this.frame, this.damage, this.hp, this.name, this.range, this.cooldown, options)
         }

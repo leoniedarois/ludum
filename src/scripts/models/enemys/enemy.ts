@@ -57,6 +57,7 @@ export class Enemy extends PhaserObject {
         });
         this.setExistingBody(compoundBody);
         this.setStatic(true);
+        this.scene.add.existing(this);
         this.setCollisionCategory(this.collisionCat);
     }
 

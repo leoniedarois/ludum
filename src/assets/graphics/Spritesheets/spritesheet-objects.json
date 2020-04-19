@@ -5,7 +5,7 @@
 			"format": "RGBA8888",
 			"size": {
 				"w": 512,
-				"h": 593
+				"h": 623
 			},
 			"scale": 1,
 			"frames": [
@@ -60,24 +60,24 @@
 					}
 				},
 				{
-					"filename": "gameplay/convoyleft.png",
+					"filename": "gameplay/explosion.png",
 					"rotated": false,
-					"trimmed": true,
+					"trimmed": false,
 					"sourceSize": {
 						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 8,
+						"y": 0,
 						"w": 64,
-						"h": 48
+						"h": 64
 					},
 					"frame": {
 						"x": 0,
 						"y": 545,
 						"w": 64,
-						"h": 48
+						"h": 64
 					},
 					"anchor": {
 						"x": 0.5,
@@ -85,74 +85,24 @@
 					}
 				},
 				{
-					"filename": "gameplay/convoyright.png",
+					"filename": "gameplay/explosion3.png",
 					"rotated": false,
-					"trimmed": true,
+					"trimmed": false,
 					"sourceSize": {
 						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 8,
+						"y": 0,
 						"w": 64,
-						"h": 48
+						"h": 64
 					},
 					"frame": {
 						"x": 64,
 						"y": 545,
 						"w": 64,
-						"h": 48
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gameplay/frostgrenade.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
 						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 14,
-						"y": 1,
-						"w": 40,
-						"h": 48
-					},
-					"frame": {
-						"x": 128,
-						"y": 545,
-						"w": 40,
-						"h": 48
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "gameplay/grenade.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 14,
-						"y": 1,
-						"w": 40,
-						"h": 48
-					},
-					"frame": {
-						"x": 168,
-						"y": 545,
-						"w": 40,
-						"h": 48
 					},
 					"anchor": {
 						"x": 0.5,
@@ -174,8 +124,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 192,
-						"y": 417,
+						"x": 128,
+						"y": 545,
 						"w": 64,
 						"h": 64
 					},
@@ -200,7 +150,7 @@
 					},
 					"frame": {
 						"x": 192,
-						"y": 481,
+						"y": 417,
 						"w": 64,
 						"h": 64
 					},
@@ -210,7 +160,7 @@
 					}
 				},
 				{
-					"filename": "gameplay/wagonhorizontal.png",
+					"filename": "gameplay/explosion4.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -219,15 +169,65 @@
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 11,
+						"y": 0,
 						"w": 64,
-						"h": 42
+						"h": 56
 					},
 					"frame": {
-						"x": 208,
-						"y": 545,
+						"x": 192,
+						"y": 481,
 						"w": 64,
-						"h": 42
+						"h": 56
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "heart.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 9,
+						"w": 64,
+						"h": 55
+					},
+					"frame": {
+						"x": 192,
+						"y": 537,
+						"w": 64,
+						"h": 55
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/explosion2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 58,
+						"h": 59
+					},
+					"frame": {
+						"x": 256,
+						"y": 417,
+						"w": 58,
+						"h": 59
 					},
 					"anchor": {
 						"x": 0.5,
@@ -250,7 +250,7 @@
 					},
 					"frame": {
 						"x": 256,
-						"y": 417,
+						"y": 476,
 						"w": 48,
 						"h": 64
 					},
@@ -275,9 +275,84 @@
 					},
 					"frame": {
 						"x": 256,
-						"y": 481,
+						"y": 540,
 						"w": 48,
 						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoyleft.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 64,
+						"h": 48
+					},
+					"frame": {
+						"x": 304,
+						"y": 476,
+						"w": 64,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/convoyright.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 64,
+						"h": 48
+					},
+					"frame": {
+						"x": 314,
+						"y": 417,
+						"w": 64,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "coin.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 51,
+						"h": 60
+					},
+					"frame": {
+						"x": 304,
+						"y": 524,
+						"w": 51,
+						"h": 60
 					},
 					"anchor": {
 						"x": 0.5,
@@ -299,10 +374,110 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 272,
-						"y": 545,
+						"x": 304,
+						"y": 584,
 						"w": 45,
 						"h": 39
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "home.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 4,
+						"w": 54,
+						"h": 50
+					},
+					"frame": {
+						"x": 355,
+						"y": 524,
+						"w": 54,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/wagonhorizontal.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 11,
+						"w": 64,
+						"h": 42
+					},
+					"frame": {
+						"x": 355,
+						"y": 574,
+						"w": 64,
+						"h": 42
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/frostgrenade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 1,
+						"w": 40,
+						"h": 48
+					},
+					"frame": {
+						"x": 368,
+						"y": 465,
+						"w": 40,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "gameplay/grenade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 1,
+						"w": 40,
+						"h": 48
+					},
+					"frame": {
+						"x": 378,
+						"y": 417,
+						"w": 40,
+						"h": 48
 					},
 					"anchor": {
 						"x": 0.5,
@@ -324,10 +499,35 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 304,
-						"y": 417,
+						"x": 409,
+						"y": 465,
 						"w": 42,
 						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "rocket.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 34,
+						"h": 62
+					},
+					"frame": {
+						"x": 419,
+						"y": 529,
+						"w": 34,
+						"h": 62
 					},
 					"anchor": {
 						"x": 0.5,
@@ -349,8 +549,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 304,
-						"y": 481,
+						"x": 451,
+						"y": 417,
 						"w": 30,
 						"h": 64
 					},
@@ -374,8 +574,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 334,
-						"y": 481,
+						"x": 481,
+						"y": 417,
 						"w": 30,
 						"h": 64
 					},
@@ -399,8 +599,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 346,
-						"y": 417,
+						"x": 453,
+						"y": 481,
 						"w": 30,
 						"h": 64
 					},
@@ -424,7 +624,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 364,
+						"x": 483,
 						"y": 481,
 						"w": 28,
 						"h": 64
@@ -449,8 +649,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 376,
-						"y": 417,
+						"x": 453,
+						"y": 545,
 						"w": 24,
 						"h": 64
 					},
@@ -474,110 +674,10 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 392,
-						"y": 481,
+						"x": 477,
+						"y": 545,
 						"w": 24,
 						"h": 64
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "rocket.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 15,
-						"y": 0,
-						"w": 34,
-						"h": 62
-					},
-					"frame": {
-						"x": 400,
-						"y": 417,
-						"w": 34,
-						"h": 62
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "heart.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 9,
-						"w": 64,
-						"h": 55
-					},
-					"frame": {
-						"x": 434,
-						"y": 417,
-						"w": 64,
-						"h": 55
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "home.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 5,
-						"y": 4,
-						"w": 54,
-						"h": 50
-					},
-					"frame": {
-						"x": 434,
-						"y": 472,
-						"w": 54,
-						"h": 50
-					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
-					}
-				},
-				{
-					"filename": "coin.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 3,
-						"w": 51,
-						"h": 60
-					},
-					"frame": {
-						"x": 416,
-						"y": 522,
-						"w": 51,
-						"h": 60
 					},
 					"anchor": {
 						"x": 0.5,
@@ -590,6 +690,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:165d0f55e75ae62b5ff6651c3ce5688d:16d1ab06d9f70d97dddea742c5338c73:e7aaed0050fcdc69d8d78b80463e8bca$"
+		"smartupdate": "$TexturePacker:SmartUpdate:ab0483fed92792d48fbd57cc6668dfd0:c07f35f35b4571338e0becfda088c49f:e7aaed0050fcdc69d8d78b80463e8bca$"
 	}
 }

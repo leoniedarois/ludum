@@ -1,5 +1,6 @@
 import {PhaserObject} from "../phaserObjects/phaserObject";
 import {Enemy} from "../enemys/enemy";
+import {Convoy} from "../convoy/convoy";
 
 export class Projectile extends PhaserObject {
     private damage: number;
@@ -20,6 +21,7 @@ export class Projectile extends PhaserObject {
         this.collisionCat = target.getCollisionCat();
         this.setPhysics();
         this.moveProjectileToTarget();
+        this.scene.events.on('update', (time, delta) => { this.update()} );
         this.scene.matterCollision.addOnCollideStart({objectA: this,
             callback: this.onCollision,
             context: this
@@ -27,17 +29,19 @@ export class Projectile extends PhaserObject {
     }
 
     private moveProjectileToTarget(): void {
-        const direction = Math.atan((this.target.x - this.initiator.x) / (this.target.y - this.initiator.y));
-        const speed2 = this.target.y >= this.initiator.y ? this.speed : -this.speed;
+        if (this.scene !== undefined) {
+            const direction = Math.atan((this.target.x - this.x) / (this.target.y - this.y));
+            const speed2 = this.target.y >= this.y ? this.speed : -this.speed;
 
-        this.setVelocity(speed2 * Math.sin(direction), speed2 * Math.cos(direction));
+            this.setVelocity(speed2 * Math.sin(direction), speed2 * Math.cos(direction));
+        }
     }
 
     /**
      * Build the Physic of the object
      */
     protected setPhysics() {
-        const body = this.scene.matter.bodies.rectangle(this.x, this.y, 1, 2);
+        const body = this.scene.matter.bodies.rectangle(this.x, this.y, 32, 32);
 
         const compoundBody = this.scene.matter.body.create({
             parts: [body],
@@ -47,16 +51,28 @@ export class Projectile extends PhaserObject {
         this.scene.add.existing(this);
     }
 
+    public getInitiator(): PhaserObject {
+        return this.initiator;
+    }
+
     public onCollision({ bodyA, bodyB }): void {
         if (bodyB.gameObject.issensor){
             return;
         }
-        console.log('Target Hit !!');
-        this.scene.matterCollision.removeOnCollideStart({objectA: this,
-            callback: this.onCollision,
-            context: this
-        });
-        this.destroy();
+        console.log(bodyB.gameObject);
+        if (bodyA.gameObject.getInitiator() instanceof Enemy) {
+            if (bodyB.gameObject instanceof Convoy) {
+                console.log('Convoy Hit !!');
+                this.scene.matterCollision.removeOnCollideStart({objectA: this,
+                    callback: this.onCollision,
+                    context: this
+                });
+                this.destroy();
+            }
+        }
+    }
 
+    public update(): void {
+        this.moveProjectileToTarget();
     }
 }
