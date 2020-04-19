@@ -28,4 +28,4 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 
 };
 // tslint:disable-next-line: no-unused-expression
-const game = new Phaser.Game(gameConfig);
+new Phaser.Game(gameConfig);
