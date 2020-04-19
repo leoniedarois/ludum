@@ -1,5 +1,7 @@
 import {PhaserObject} from "../phaserObjects/phaserObject";
 import 'phaser'
+import {PROJECTILES_TYPE_INFO} from "../projectiles/projectilesTypeInfo";
+import {Projectile} from "../projectiles/projectile";
 export class Enemy extends PhaserObject {
     damage: number;
     hp: number;
@@ -7,16 +9,26 @@ export class Enemy extends PhaserObject {
     range: number;
     sensors: any;
     target: PhaserObject = null;
+    projectileInfo: any;
+    scene: any;
+    /**
+     * Cooldown in seconds
+     */
+    cooldown: number;
+    incooldown: boolean = false;
 
 
 
-    constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, damage: number, hp: number, name: number, range: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
+    constructor(world: Phaser.Physics.Matter.World, x: number, y: number, texture: string, frame: string | number, damage: number, hp: number, name: number, range: number, cooldown: number, options: Phaser.Types.Physics.Matter.MatterBodyConfig) {
         super(world, x, y, texture, frame, options);
         this.damage = damage;
         this.hp = hp;
         this.range = range;
         this.enemenyName = name;
+        this.collisionCat = 1;
+        this.cooldown = cooldown;
         this.setPhysics();
+        this.handleCollision();
     }
 
     /**
@@ -44,9 +56,13 @@ export class Enemy extends PhaserObject {
             inertia: Infinity
         });
         this.setExistingBody(compoundBody);
-        this.enterShootingRange();
+        this.setCollisionCategory(this.collisionCat);
     }
 
+    /**
+     * Set the target of the enemy
+     * @param target
+     */
     protected setTarget(target: PhaserObject): void {
         this.target = target;
     }
@@ -61,20 +77,80 @@ export class Enemy extends PhaserObject {
     /**
      * Handle when the target enter the shootingRange
      */
-    private enterShootingRange(): void {
-        this.scene.matter.world.on('collisionstart', function (event: any, bodyA: any, bodyB: any) {
-            if (bodyB.isSensor && !bodyB.gameObject.hasTarget()) {
-                //Begin firing to the target
-                console.log(bodyB);
-                bodyB.gameObject.setTarget(bodyA.gameObject);
+    private enterShootingRange({ bodyA, bodyB }): void {
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
+            return;
+        }
+        if (bodyA.isSensor && !bodyA.gameObject.hasTarget()) {
+            //Begin firing to the target
+            console.log('enter shooting range of turret');
+            bodyA.gameObject.setTarget(bodyB.gameObject);
+        }
+    }
+
+    /**
+     * Handle when the target leave the shootingRange
+     */
+    private leaveShootingRange({ bodyA, bodyB }): void {
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
+            return;
+        }
+        if (bodyA.isSensor && bodyA.gameObject.hasTarget()) {
+            //Begin firing to the target
+            console.log('leave shooting range of turret');
+            bodyA.gameObject.setTarget(null);
+        }
+    }
+
+    /**
+     * Handle when the target enter the shootingRange
+     */
+    private fireWhileTargetAtRange({ bodyA, bodyB }): void {
+        if (bodyB.gameObject instanceof Enemy || bodyB.gameObject instanceof Projectile){
+            return;
+        }
+        if (bodyA.isSensor && bodyA.gameObject.hasTarget()) {
+            //Begin firing to the target
+            if (!bodyA.gameObject.isInCooldown()){
+                bodyA.gameObject.fire();
             }
+        }
+    }
+
+    private handleCollision() {
+        this.scene.matterCollision.addOnCollideStart({
+            objectA: [this.sensors.detection],
+            callback: this.enterShootingRange,
+            context: this
         });
-        this.scene.matter.world.on('collisionend', function (event: any, bodyA: any, bodyB: any) {
-            if (bodyB.isSensor && bodyB.gameObject.hasTarget()) {
-                //Begin firing to the target
-                console.log('leave shooting range of turret');
-                bodyB.gameObject.setTarget(null);
-            }
+        this.scene.matterCollision.addOnCollideActive({
+            objectA: [this.sensors.detection],
+            callback: this.fireWhileTargetAtRange,
+            context: this
         });
+        this.scene.matterCollision.addOnCollideEnd({
+            objectA: [this.sensors.detection],
+            callback: this.leaveShootingRange,
+            context: this
+        })
+    }
+
+    /**
+     * return if the enemy is in cooldown
+     */
+    private isInCooldown(): boolean {
+        return this.incooldown;
+    }
+
+    private fire(): void {
+        console.log('Fire');
+        this.incooldown = true;
+        setTimeout(() => {
+            this.incooldown = false;
+            console.log('reloaded')
+        }, this.cooldown * 1000);
+        //world, x, y, frame, options
+        this.projectileInfo.create(this.world, this.x, this.y, this.target, this);
+
     }
 }

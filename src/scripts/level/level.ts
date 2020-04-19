@@ -27,8 +27,7 @@ export class Level {
     public spawnEnemy(): void {
         this.map.findObject('EnemysSpawn/spawn', (obj : any) => {
             let enemy = _.sample(ENEMYS_TYPE_INFO);
-            let test = enemy.create(this.worldLayer, obj.x, obj.y, 'textureString', 'frameString', {});
-            console.log(test)
+            enemy.create(this.worldLayer, obj.x, obj.y, 'textureString', 'frameString', {});
         })
     }
 }
