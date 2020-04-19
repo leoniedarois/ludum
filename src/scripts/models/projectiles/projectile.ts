@@ -48,6 +48,8 @@ export class Projectile extends PhaserObject {
             inertia: Infinity
         });
         this.setExistingBody(compoundBody);
+        this.setFriction(0);
+        this.setFrictionAir(0);
         this.scene.add.existing(this);
     }
 
