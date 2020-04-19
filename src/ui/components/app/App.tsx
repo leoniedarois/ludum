@@ -5,12 +5,22 @@ import Button from "../button/button";
 import Menu from "../menu/menu";
 import HealthBar from "../healthBar/healthBar";
 import Coin from "../coin/coin";
+import Shop from "../shop/shop";
 
 const App = () => {
   const [show, setShow] = useState(false);
+  const [displayShop, setShowShop] = useState(false);
 
   const showShop = () => {
-    console.log("shop open");
+    if(displayShop === false) {
+      setShowShop(true)
+      console.log("shop open");
+    } else {
+      setShowShop(false);
+      console.log("shop hide");
+
+    }
+
   };
 
   const hideShop = () => {
@@ -42,6 +52,7 @@ const App = () => {
         </div>
         <div className={"item bottom"}>
           <Button title={'assets/graphics/raw/rocket.png'} onClick={showShop}/>
+          <Shop display={displayShop}/>
         </div>
       </div>
     </React.Fragment>
