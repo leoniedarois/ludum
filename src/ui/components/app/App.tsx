@@ -4,6 +4,7 @@ import "./App.scss"
 import Button from "../button/button";
 import Menu from "../menu/menu";
 import HealthBar from "../healthBar/healthBar";
+import Coin from "../coin/coin";
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -27,19 +28,16 @@ const App = () => {
   return (
     <React.Fragment>
       <div className={"wrapperFifty"}>
-        <div className={"item"}>
+        <div className={"item top"}>
         </div>
-        <div className={"item"}>
+        <div className={"item top"}>
           <Button title={'assets/graphics/raw/home.png'} onClick={showMenu}/>
           <Menu display={show} onClick={hideMenu}/>
         </div>
       </div>
       <div className={"wrapperFifty"}>
         <div className={"item bottom"}>
-          <div>
-            <img src={"assets/graphics/raw/coin.png"} alt="coin"/>
-            42
-          </div>
+          <Coin/>
           <HealthBar/>
         </div>
         <div className={"item bottom"}>

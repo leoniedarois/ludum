@@ -1,0 +1,13 @@
+.coin {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 20px;
+
+  img {
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+  }
+}

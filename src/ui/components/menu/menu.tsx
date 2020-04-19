@@ -9,11 +9,19 @@ const Menu = ({display, onClick}: MenuProps) => {
     "show": display
   });
 
+  const overlayClass = classNames({
+    "overlay": display
+  });
+
   return (
-    <div className={menuClasses}>
-      <button className={"button"} onClick={onClick}>Back to the game</button>
-      <button className={"button"}>Exit game</button>
-    </div>
+    <React.Fragment>
+      <div className={overlayClass}/>
+        <div className={menuClasses}>
+            <button className={"button"} onClick={onClick}>Back to the game</button>
+            <button className={"button"}>Exit game</button>
+        </div>
+    </React.Fragment>
+
   )
 }
 
