@@ -56,6 +56,7 @@ export class Enemy extends PhaserObject {
             inertia: Infinity
         });
         this.setExistingBody(compoundBody);
+        this.setStatic(true);
         this.setCollisionCategory(this.collisionCat);
     }
 
