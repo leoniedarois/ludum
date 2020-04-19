@@ -1,0 +1,16 @@
+.wrapperFifty {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bottom {
+    display: flex;
+    align-items: flex-start;
+}
