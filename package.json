@@ -51,7 +51,7 @@
         "easystarjs": "^0.4.3",
         "file-loader": "^6.0.0",
         "husky": "^4.2.3",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.19",
         "node-sass": "^4.13.1",
         "phaser": "^3.22.0",
         "phaser-matter-collision-plugin": "^0.10.2",
